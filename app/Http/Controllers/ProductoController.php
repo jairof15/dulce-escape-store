@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProductoRequest;
 use App\Http\Requests\UpdateProductoRequest;
 
 class ProductoController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ProductoController extends Controller
     public function index()
     {
         //
-        view('producto.index');
+        view('productos.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        view('producto.index');
+        return view('productos.create');
     }
 
     /**
@@ -32,6 +33,8 @@ class ProductoController extends Controller
     public function store(StoreProductoRequest $request)
     {
         //
+        return redirect()->route('productos.index')->with('success', 'Producto created successfully.');
+
     }
 
     /**
@@ -40,6 +43,7 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+        return view('', compact(''));
     }
 
     /**
@@ -48,6 +52,7 @@ class ProductoController extends Controller
     public function edit(Producto $producto)
     {
         //
+        return view('productos.edit', compact('producto'));
     }
 
     /**
@@ -56,6 +61,7 @@ class ProductoController extends Controller
     public function update(UpdateProductoRequest $request, Producto $producto)
     {
         //
+        
     }
 
     /**
