@@ -8,12 +8,13 @@ use App\Http\Requests\UpdateVentaRequest;
 
 class VentaController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
+        view('ventas.index');
     }
 
     /**
@@ -22,6 +23,7 @@ class VentaController extends Controller
     public function create()
     {
         //
+        return view('ventas.create');
     }
 
     /**
@@ -30,6 +32,8 @@ class VentaController extends Controller
     public function store(StoreVentaRequest $request)
     {
         //
+        return redirect()->route('ventas.index')->with('success', 'venta created successfully.');
+
     }
 
     /**
@@ -38,6 +42,7 @@ class VentaController extends Controller
     public function show(Venta $venta)
     {
         //
+        return view('', compact(''));
     }
 
     /**
@@ -46,6 +51,7 @@ class VentaController extends Controller
     public function edit(Venta $venta)
     {
         //
+        return view('ventas.edit', compact('venta'));
     }
 
     /**
@@ -54,6 +60,7 @@ class VentaController extends Controller
     public function update(UpdateVentaRequest $request, Venta $venta)
     {
         //
+        
     }
 
     /**

@@ -14,6 +14,7 @@ class VentaDetalleController extends Controller
     public function index()
     {
         //
+        view('ventadetalles.index');
     }
 
     /**
@@ -22,6 +23,7 @@ class VentaDetalleController extends Controller
     public function create()
     {
         //
+        return view('ventadetalles.create');
     }
 
     /**
@@ -30,6 +32,7 @@ class VentaDetalleController extends Controller
     public function store(StoreVentaDetalleRequest $request)
     {
         //
+        return redirect()->route('ventasdetalle.index')->with('success', 'ventadetalle created successfully.');
     }
 
     /**
@@ -38,6 +41,7 @@ class VentaDetalleController extends Controller
     public function show(VentaDetalle $ventaDetalle)
     {
         //
+        return view('', compact(''));
     }
 
     /**
@@ -46,6 +50,7 @@ class VentaDetalleController extends Controller
     public function edit(VentaDetalle $ventaDetalle)
     {
         //
+        return view('ventadetalles.edit', compact('ventadetalle'));
     }
 
     /**
